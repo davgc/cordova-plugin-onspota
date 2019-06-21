@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="mi-plugin"
+    version="1.0.0">
+    <name>OnSpota SDK Cordova Plugin</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/davgc/cordova-plugin-onspota.git</repo>
+    
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- Este es el nombre por el cual se accedera el plugin -->
+        <clobbers target="OnSpota" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="OnSpota">
+          <param name="android-package" value="com.syntonize.OnSpota" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/com/syntonize/OnSpota.java" target-dir="src/com/syntonize/" />
+       <lib-file src="src/android/onspota-sdk.aar" />
+
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="OnSpota" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="OnSpota">
+                <param name="ios-package" value="OnSpota" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/OnSpota.h" />
+        <source-file src="src/ios/OnSpota.m" />
+
+         <framework src="src/ios/Framework/OnSpotSdk.framework" custom="true" embed="true" />
+
+    </platform>
+</plugin>

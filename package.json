@@ -1,0 +1,12 @@
+{
+  "name": "cordova-plugin-onSpota",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-onSpota",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "OnSpota SDK Cordova Plugin"
+}

@@ -1,0 +1,11 @@
+framework module OnSpotSdk {
+  umbrella header "OnSpotSdk.h"
+
+  export *
+  module * { export * }
+}
+
+module OnSpotSdk.Swift {
+    header "OnSpotSdk-Swift.h"
+    requires objc
+}

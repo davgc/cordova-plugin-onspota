@@ -1,0 +1,1 @@
+OnSpota SDK 1.19.3 Cordova Plugin

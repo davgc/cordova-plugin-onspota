@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="onSpota"
+    id="cordova-plugin-onSpota"
     version="1.0.0">
     <name>OnSpota SDK Cordova Plugin</name>
     <description></description>
@@ -9,6 +9,11 @@
     <keywords></keywords>
     <repo>https://github.com/davgc/cordova-plugin-onspota.git</repo>
     
+  <engines>
+    <engine name="cordova" version=">=6.4.0" />
+    <engine name="cordova-android" version=">=5.1.0" />
+    <engine name="cordova-ios" version=">=4.5.0" />
+  </engines>
 
     <!-- android -->
     <platform name="android">

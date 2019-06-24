@@ -1,6 +1,6 @@
 /**
  */
-package com.example;
+package com.syntonize;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -16,8 +16,8 @@ import android.util.Log;
 
 import java.util.Date;
 
-public class MiPlugin extends CordovaPlugin {
-  private static final String TAG = "MiPlugin";
+public class OnSpota extends CordovaPlugin {
+  private static final String TAG = "OnSpota";
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);

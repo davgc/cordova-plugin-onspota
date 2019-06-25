@@ -30,6 +30,17 @@
         </feature>
       </config-file>
 
+       <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+        </config-file>
+
       <source-file src="src/android/com/syntonize/OnSpota.java" target-dir="src/com/syntonize/" />
        <lib-file src="src/android/onspota-sdk.aar" />
 
@@ -37,6 +48,12 @@
 
     <!-- ios -->
     <platform name="ios">
+
+    <preference name="LOCATION_WHEN_IN_USE_DESCRIPTION" default="This app wants to get your location while this app runs only."/>
+    <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This app wants to get your location always, even this app runs in background."/>
+    <preference name="MOTION_USAGE_DESCRIPTION" default="This app wants to get your motion."/>
+
+
         <js-module src="www/plugin.js" name="plugin">
             <runs/>
             <clobbers target="OnSpota" />
@@ -46,6 +63,32 @@
                 <param name="ios-package" value="OnSpota" onload="true" />
             </feature>
         </config-file>
+
+
+         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+          <string>$LOCATION_WHEN_IN_USE_DESCRIPTION</string>
+         </config-file>
+         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+          <string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
+         </config-file>
+         <config-file target="*-Info.plist" parent="NSMotionUsageDescription">
+          <string>$MOTION_USAGE_DESCRIPTION</string>
+         </config-file>
+         <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>fetch</string>
+                <string>location</string>
+            </array>
+         </config-file>
+
+         <podspec>
+          <config>
+            <source url="https://github.com/CocoaPods/Specs.git"/>
+          </config>
+          <pods>
+            <pod name="OnSpotSdk" spec="~> 1.0.0"/>
+          </pods>
+        </podspec>
 
         <header-file src="src/ios/OnSpota.h" />
         <source-file src="src/ios/OnSpota.m" />

@@ -81,19 +81,23 @@
             </array>
          </config-file>
 
-         <podspec>
-          <config>
-            <source url="https://github.com/CocoaPods/Specs.git"/>
-          </config>
-          <pods>
-            <pod name="OnSpotSdk" spec="~> 1.0.0"/>
-          </pods>
-        </podspec>
+        <dependency id="cordova-plugin-cocoapod-support"/>
+
+
+        <pods-config ios-min-version="11.0" use-frameworks="true">
+             <!-- optionally add private spec sources -->
+        </pods-config>
+
+        <pod name="AFNetworking" spec="~> 3"/>
+        <pod name="JSONModel" spec="~> 1.2"/>
+        <pod name="ISO8601" spec="~> 0.6"/>
 
         <header-file src="src/ios/OnSpota.h" />
         <source-file src="src/ios/OnSpota.m" />
 
-         <framework src="src/ios/Framework/OnSpotSdk.framework" custom="true" embed="true" />
+        <framework src="src/ios/Framework/OnSpotSdk.framework" custom="true" embed="true" />
+
+        
 
     </platform>
 </plugin>

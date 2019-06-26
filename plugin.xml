@@ -41,16 +41,17 @@
             <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
         </config-file>
 
+
+
       <source-file src="src/android/com/syntonize/OnSpota.java" target-dir="src/com/syntonize/" />
-       <lib-file src="src/android/onspota-sdk.aar" />
+      
+      <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+      <lib-file src="src/android/libs/onspota-sdk.aar" />
 
     </platform>
 
     <!-- ios -->
     <platform name="ios">
-
-
-“NSLocationAlwaysAndWhenInUseUsageDescription” and “NSLocationWhenInUseUsageDescription”
 
     <preference name="LOCATION_WHEN_IN_USE_DESCRIPTION" default="This app wants to get your location while this app runs only."/>
     <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="This app wants to get your location always, even this app runs in background."/>
@@ -99,7 +100,6 @@
         <source-file src="src/ios/OnSpota.m" />
 
         <framework src="src/ios/Framework/OnSpotSdk.framework" custom="true" embed="true" />
-
         
 
     </platform>

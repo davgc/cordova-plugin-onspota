@@ -163,13 +163,13 @@ public class OnSpota extends CordovaPlugin {
         this.callbackError(callbackContext, jsonOut);
     }
 
-    @Override
+    // @Override
     public void onResume(Boolean multitask) {
         super.onResume(multitask);
 
         cordova.getContext().registerReceiver(mEventReceiver, new IntentFilter(cordova.getContext().getString(com.onspota.sdk.R.string.intent_search)));
     }
-    @Override
+    // @Override
     public void onPause(Boolean multitask) {
         super.onPause(multitask);
         cordova.getContext().unregisterReceiver(mEventReceiver);

@@ -46,7 +46,9 @@
       <source-file src="src/android/com/syntonize/OnSpota.java" target-dir="src/com/syntonize/" />
       
       <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-      <lib-file src="src/android/libs/onspota-sdk.aar" />
+      <resource-file src="src/android/libs/onspota-sdk.aar" target="libs/onspota-sdk.aar" />
+
+      <!-- <lib-file src="src/android/libs/onspota-sdk.aar" /> -->
 
     </platform>
 
